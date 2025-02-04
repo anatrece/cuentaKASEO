@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    background-image: url(fondo/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #140d07;
+    color: azure;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.portada{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo{
+    font-size: 80px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1px;
+}
+.ciudad{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1px;
+    padding: 20px;
+    padding-top: 1px;
+}
+
+.checklist-container{
+    font-weight: 100;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.simply-countdown {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.simply-countdown > .simply-section {
+    width: 65px;
+    height: 65px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.simply-countdown > .simply-section > div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    align-items: center;
+}
+
+.simply-countdown > .simply-section .simply-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.simply-countdown > .simply-section .simply-word {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+    @media (min-width: 640px) {
+    .simply-countdown > .simply-section {
+      width: 75px;
+      height: 75px;
+      padding: 1.75rem;
+    }
+
+.simply-countdown > .simply-section .simply-amount {
+font-size: 1.75rem;
+    }
+
+    .simply-countdown > .simply-section .simply-word {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .simply-countdown > .simply-section {
+      width: 90px;
+      height: 90px;
+      padding: 2rem;
+    }
+  
+    .simply-countdown > .simply-section .simply-amount {
+      font-size: 2rem;
+    }
+  
+    .simply-countdown > .simply-section .simply-word {
+      font-size: 0.8rem;
+    }
+  }
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    color: #140d07;
+}
+
+.todo-app h2{
+    color: #140d07;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #bfa030;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+ul  li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px  12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(fondo/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul  li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul  li.checked::before{
+    background-image: url(fondo/checked.png);
+}
+
+ul li  span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul  li span:hover{
+    background: #edeef0;
+
+}

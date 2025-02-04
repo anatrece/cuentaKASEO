@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva</title>
+    <link rel="stylesheet" href="stylecountdown.css">
+    <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js/dist/simplyCountdown.umd.js"></script>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1 class="titulo">KASE.O</h1>
+        <p class="ciudad">GUADALAJARA</p>
+        <div class="simply-countdown"></div>
+    </div>
+
+    <script>
+        simplyCountdown(".simply-countdown", {
+            year: 2025,
+            month: 10,
+            day: 25,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+            words: {
+                days: { lambda: (root, count) => (count > 1 ? root + "s" : root), root: "día" },
+                hours: { lambda: (root, count) => (count > 1 ? root + "s" : root), root: "hora" },
+                minutes: { lambda: (root, count) => (count > 1 ? root + "s" : root), root: "minuto" },
+                seconds: { lambda: (root, count) => (count > 1 ? root + "s" : root), root: "segundo" },
+            },
+            plural: true,
+            inline: false,
+            enableUtc: false,
+            onEnd: () => {
+                console.log("¡CONCIERTOOOOO!");
+            }
+        });
+    </script>
+
+<div class="container">
+    <div class="todo-app">
+        <h2>Preparativos <img src="fondo/ckecklist.png"></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="¿Qué falta?">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="list-container">
+            <!--<li class="checked">Comprar boletos</li>
+            <li>Playeras</li>
+            <li>pantalones</li>
+            <li>tenis</li>
+            <li>chanclas</li>-->
+        </ul>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
